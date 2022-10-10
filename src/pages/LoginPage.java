@@ -5,6 +5,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+//Login Page
+//Polje za unos email-a
+//Polje za unos lozinke
+//Dugme za login.
+
 public class LoginPage {
 
 	private WebDriver driver;

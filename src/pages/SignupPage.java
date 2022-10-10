@@ -5,6 +5,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+
+//	Signup Page
+//	Polje za unos imena
+//	Polje za unos emaila
+//	Polje za unos lozinke
+//	Polje za potvrdi lozinku
+//	Sign me up dugme
+
 public class SignupPage {
 
 	private WebDriver driver;
