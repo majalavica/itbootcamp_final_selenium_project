@@ -2,6 +2,7 @@ package test;
 
 import java.time.Duration;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 public class test {
@@ -16,7 +17,8 @@ public class test {
 		
 		driver.get("https://www.google.com/");
 
-
+		driver.findElement(By.className("gLFyf")).sendKeys("Test");
+		
 		Thread.sleep(5000);
 		driver.quit();
 	}
