@@ -31,6 +31,6 @@ public class LoginPage {
 	
 	
 	public WebElement getLoginButton() {
-		return driver.findElement(By.xpath("//*[text() = 'Login']"));
+		return driver.findElement(By.xpath("//*[@type = 'submit']"));
 	}
 }

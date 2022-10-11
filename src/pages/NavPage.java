@@ -20,9 +20,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 //	FR dugme iz padajuceg menija za izbor jezika
 //	CN dugme iz padajuceg menija za izbor jezika
 
-
 public class NavPage {
-	
+
 	private WebDriver driver;
 	private WebDriverWait wait;
 
@@ -30,59 +29,60 @@ public class NavPage {
 		this.driver = driver;
 		this.wait = wait;
 	}
-	
+
 	public WebElement getHomeLink() {
 		return driver.findElement(By.xpath("//*[contains(@class, 'v-toolbar__items')]/a"));
 	}
-	
+
 	public WebElement getAboutLink() {
 		return driver.findElement(By.xpath("//*[contains(@class, 'v-toolbar__items')]/a[2]"));
 	}
-	
+
 	public WebElement getMyProfileLink() {
 		return driver.findElement(By.xpath("//*[contains(@class, 'v-toolbar__items')]/a[3]"));
 	}
-	
-	public WebElement getAdminButton(){
+
+	public WebElement getAdminButton() {
 		return driver.findElement(By.className("btnAdmin"));
 	}
-	
+
 	public WebElement getCitiesLink() {
 		return driver.findElement(By.id("list-item-222"));
 	}
-	
+
 	public WebElement getUsersLink() {
 		return driver.findElement(By.id("list-item-225"));
 	}
-	
+
 	public WebElement getSignUpButton() {
-		return driver.findElement(By.xpath("//*[contains(@class, 'v-toolbar__items')]/a[4]"));
+		return driver.findElement(By.xpath("//a[@href='/signup']"));
 	}
-	
+
 	public WebElement getLoginButton() {
-		return driver.findElement(By.xpath("//*[contains(@class, 'v-toolbar__items')]/a[3]"));
+		return driver.findElement(By.xpath("//a[@href='/login']"));
 	}
-	
+
 	public WebElement getLogoutButton() {
-		return driver.findElement(By.xpath("//*[contains(@class, 'v-toolbar__items')]/button[2]"));
+		return driver.findElement(By.className("btnLogout"));
 	}
+
 	public WebElement getLanguageButton() {
-		return driver.findElement(By.xpath("//*[contains(@class, 'v-toolbar__items')]/button[3]"));
+		return driver.findElement(By.className("btnLocaleActivation"));
 	}
-	
+
 	public WebElement getENLanguageButton() {
-		return driver.findElement(By.id("list-item-281"));
+		return driver.findElement(By.className("btnEN"));
 	}
-	
+
 	public WebElement getESLanguageButton() {
-		return driver.findElement(By.id("list-item-283"));
+		return driver.findElement(By.className("btnES"));
 	}
-	
+
 	public WebElement getFRLanguageButton() {
-		return driver.findElement(By.id("list-item-285"));
+		return driver.findElement(By.className("btnFR"));
 	}
-	
+
 	public WebElement getCNLanguageButton() {
-		return driver.findElement(By.id("list-item-287"));
+		return driver.findElement(By.className("btnCN"));
 	}
 }
