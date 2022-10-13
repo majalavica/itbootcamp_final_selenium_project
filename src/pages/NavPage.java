@@ -31,15 +31,15 @@ public class NavPage {
 	}
 
 	public WebElement getHomeLink() {
-		return driver.findElement(By.xpath("//*[contains(@class, 'v-toolbar__items')]/a"));
+		return driver.findElement(By.className("btnHome"));
 	}
 
 	public WebElement getAboutLink() {
-		return driver.findElement(By.xpath("//*[contains(@class, 'v-toolbar__items')]/a[2]"));
+		return driver.findElement(By.className("btnAbout"));
 	}
 
 	public WebElement getMyProfileLink() {
-		return driver.findElement(By.xpath("//*[contains(@class, 'v-toolbar__items')]/a[3]"));
+		return driver.findElement(By.className("btnProfile"));
 	}
 
 	public WebElement getAdminButton() {
@@ -47,11 +47,11 @@ public class NavPage {
 	}
 
 	public WebElement getCitiesLink() {
-		return driver.findElement(By.id("list-item-222"));
+		return driver.findElement(By.className("btnAdminCities"));
 	}
 
 	public WebElement getUsersLink() {
-		return driver.findElement(By.id("list-item-225"));
+		return driver.findElement(By.className("btnAdminUsers"));
 	}
 
 	public WebElement getSignUpButton() {
@@ -84,5 +84,9 @@ public class NavPage {
 
 	public WebElement getCNLanguageButton() {
 		return driver.findElement(By.className("btnCN"));
+	}
+	
+	public WebElement getHeader() {
+		return this.driver.findElement(By.xpath("//h1"));
 	}
 }

@@ -48,22 +48,26 @@ public class CitiesPage {
 
 	public void waitForDialogDeleteToBeVisible() {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("text-body-1")));
+		wait.until(ExpectedConditions
+				.visibilityOfElementLocated(By.xpath("//*[text()='Do you really want to delete this item?']/../..")));
 	}
 
-	public void getSaveButton() {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("btnSave")));
+	public WebElement getSaveButton() {
+		return driver.findElement(By.className("btnSave"));
 	}
 
-	public void getDeleteButton() {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[ text() = 'Delete']")));
+	public WebElement getDeleteButton() {
+		return driver.findElement(By.xpath("//*[text()=' Delete ']/.."));
 	}
 
 	public void waitForRowsNumberToBeVisible(int rowNum) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 		wait.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//tbody/tr"), rowNum));
+	}
+
+	public void waitForDeleteDialog() {
+		wait.until(ExpectedConditions
+				.visibilityOfElementLocated(By.xpath("//*[text()='Do you really want to delete this item?']/../..")));
 	}
 
 	public WebElement getACellFromASpecificRow(int rowNum, int cellNum) {
@@ -73,9 +77,12 @@ public class CitiesPage {
 	public WebElement getEditButtonFromARow(int rowNum) {
 		return driver.findElement(By.xpath("//tbody/tr[" + rowNum + "]//button[@id='edit']"));
 	}
-	
+
 	public WebElement getDeleteButtonFromARow(int rowNum) {
-		return driver.findElement(By.xpath("//tbody/tr[" + rowNum + "]//div/button[2]"));
+		return driver.findElement(By.xpath("//table/tbody//tr[" + rowNum + "]//*[@id='delete']"));
 	}
-	
+
+	public WebElement getInputFromNewItemDialog() {
+		return driver.findElement(By.name("name"));
+	}
 }

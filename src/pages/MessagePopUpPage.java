@@ -35,22 +35,25 @@ public class MessagePopUpPage {
 	}
 
 	public WebElement getMessageText() {
-		return this.driver.findElement(By.xpath("//div[@role='status']//li"));
+		return driver.findElement(By.className("success"));
 	}
 
 	public WebElement getCloseButtonFromVerifyPopUp() {
 		return driver.findElement(By.xpath("//*[contains(@class, 'v-btn--text')]"));
 	}
 
-	public void waitForVerifyYourAccountDialogToBeVisable() {
+	public void waitDialogToBeVisable() {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		wait.until(ExpectedConditions
-				.visibilityOfElementLocated(By.xpath("//*[contains(@class, 'v-dialog--persistent')]")));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("v-snack__content")));
 	}
 
-	public void waitForVerifyYourAccountText() {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("dlgVerifyAccount")));
+	public void waitForCitiesDialogToApper() {
+		wait.until(ExpectedConditions
+				.visibilityOfElementLocated(By.xpath("//div[contains(@class, 'success')]//div[@role='status']")));
+	}
+
+	public WebElement getVerifyYourAccountText() {
+		return this.driver.findElement(By.xpath("//div[contains(@class, 'dlgVerifyAccount')]"));
 	}
 
 	public WebElement getCloseButton() {
